@@ -13,5 +13,5 @@ endif
 "
 if executable("ag")
 	nnoremap <leader>ag :Ag! <C-R>=expand("<cword>")<CR><CR>
-	let g:ag_prg="ag --vimgrep --smart-case"
+	let g:ag_prg="ag --vimgrep --smart-case -f"
 endif
