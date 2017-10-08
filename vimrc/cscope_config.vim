@@ -10,11 +10,11 @@ if has("cscope")
 	endif
 	set csverb
 endif
-map <Leader>s :cs find s <C-R>=expand("<cword>")<cr><cr>
-map <Leader>g :cs find g <C-R>=expand("<cword>")<cr><cr>
-map <Leader>c :cs find c <C-R>=expand("<cword>")<cr><cr>
-map <Leader>t :cs find t <C-R>=expand("<cword>")<cr><cr>
-map <Leader>e :cs find e <C-R>=expand("<cword>")<cr><cr>
-map <Leader>f :cs find f <C-R>=expand("<cfile>")<cr><cr>
-map <Leader>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-map <Leader>d :cs find d <C-R>=expand("<cword>")<cr><cr>
+noremap <Leader>s :cs find s <C-R>=expand("<cword>")<cr><cr>
+noremap <Leader>g :cs find g <C-R>=expand("<cword>")<cr><cr>
+noremap <Leader>c :cs find c <C-R>=expand("<cword>")<cr><cr>
+noremap <Leader>t :cs find t <C-R>=expand("<cword>")<cr><cr>
+noremap <Leader>e :cs find e <C-R>=expand("<cword>")<cr><cr>
+noremap <Leader>f :cs find f <C-R>=expand("<cfile>")<cr><cr>
+noremap <Leader>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+noremap <Leader>d :cs find d <C-R>=expand("<cword>")<cr><cr>

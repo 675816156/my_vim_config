@@ -1,7 +1,5 @@
 filetype plugin indent on
-if &term == "screen"
-  set t_Co=256
-endif
+set t_Co=256
 syntax on
 set number
 set nowrap
@@ -42,13 +40,15 @@ set clipboard=unnamed
 set tags+=/usr/include/tags
 set tags+=./tags
 colorscheme molokai
-"set background=light
-"set background=dark
+set background=light
+syntax enable
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
-map Y y$
-map ta :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+noremap Y y$
+noremap ta :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 autocmd! bufwritepost .vimrc source %
 nnoremap <Leader>u :set nu!<CR>
 nnoremap U <C-r>
 nnoremap <C-L> :nohl<CR><C-L>
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
 set pastetoggle=<F12>

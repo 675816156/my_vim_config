@@ -26,4 +26,3 @@ Plug 'fholgado/minibufexpl.vim'
 Plug 'vim-scripts/c.vim'
 call plug#end()
 filetype plugin indent on
-
