@@ -42,9 +42,8 @@ set smarttab
 set clipboard=unnamed
 set tags+=/usr/include/tags
 set tags+=./tags
-"colorscheme molokai
-colorscheme luna-term
-set background=light
+colorscheme molokai
+set background=dark
 syntax enable
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 noremap Y y$
@@ -57,6 +56,6 @@ nnoremap <C-L> :nohl<CR><C-L>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 set pastetoggle=<F12>
-set list
+"set list
 set listchars=tab:>-,trail:.,precedes:<,extends:>,eol:$
 set shortmess=atI

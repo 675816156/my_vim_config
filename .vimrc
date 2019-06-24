@@ -7,7 +7,7 @@ source ~/.vim/vimrc/rainbow_parentheses_config.vim
 source ~/.vim/vimrc/taglist_config.vim
 source ~/.vim/vimrc/tagsearch_config.vim
 source ~/.vim/vimrc/nerdcommenter_config.vim
-source ~/.vim/vimrc/ctrlp_config.vim
+source ~/.vim/vimrc/fzf_config.vim
 source ~/.vim/vimrc/string_replace_config.vim
 source ~/.vim/vimrc/neocomplcache_config.vim
 source ~/.vim/vimrc/vim-better-whitespace_config.vim
