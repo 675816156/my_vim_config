@@ -12,3 +12,4 @@ source ~/.vim/vimrc/string_replace_config.vim
 source ~/.vim/vimrc/neocomplcache_config.vim
 source ~/.vim/vimrc/vim-better-whitespace_config.vim
 source ~/.vim/vimrc/c-vim_config.vim
+

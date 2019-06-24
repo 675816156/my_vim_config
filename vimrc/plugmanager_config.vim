@@ -24,5 +24,6 @@ Plug 'plasticboy/vim-markdown'
 Plug 'easymotion/vim-easymotion'
 Plug 'fholgado/minibufexpl.vim'
 Plug 'vim-scripts/c.vim'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 filetype plugin indent on
