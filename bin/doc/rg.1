@@ -2,12 +2,12 @@
 .\"     Title: rg
 .\"    Author: [see the "AUTHORS" section]
 .\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
-.\"      Date: 04/16/2019
+.\"      Date: 08/01/2019
 .\"    Manual: \ \&
 .\"    Source: \ \&
 .\"  Language: English
 .\"
-.TH "RG" "1" "04/16/2019" "\ \&" "\ \&"
+.TH "RG" "1" "08/01/2019" "\ \&" "\ \&"
 .\" -----------------------------------------------------------------
 .\" * Define some portability stuff
 .\" -----------------------------------------------------------------
@@ -367,6 +367,13 @@ This flag can be disabled with \-\-no\-follow\&.
 \fB\-g, \-\-glob\fR \fIGLOB\fR \&...
 .RS 4
 Include or exclude files and directories for searching that match the given glob\&. This always overrides any other ignore logic\&. Multiple glob flags may be used\&. Globbing rules match \&.gitignore globs\&. Precede a glob with a ! to exclude it\&.
+.RE
+.PP
+\fB\-\-glob\-case\-insensitive\fR
+.RS 4
+Process glob patterns given with the \-g/\-\-glob flag case insensitively\&. This effectively treats \-\-glob as \-\-iglob\&.
+.sp
+This flag can be disabled with the \-\-no\-glob\-case\-insensitive flag\&.
 .RE
 .PP
 \fB\-\-heading\fR
@@ -776,7 +783,9 @@ When this flag is present, ripgrep will use the PCRE2 regex engine instead of it
 .sp
 This is generally useful when you want to use features such as look\-around or backreferences\&.
 .sp
-Note that PCRE2 is an optional ripgrep feature\&. If PCRE2 wasn\(cqt included in your build of ripgrep, then using this flag will result in ripgrep printing an error message and exiting\&.
+Note that PCRE2 is an optional ripgrep feature\&. If PCRE2 wasn\(cqt included in your build of ripgrep, then using this flag will result in ripgrep printing an error message and exiting\&. PCRE2 may also have worse user experience in some cases, since it has fewer introspection APIs than ripgrep\(cqs default regex engine\&. For example, if you use a \*(Aq \*(Aq in a PCRE2 regex without the
+\fI\-U/\-\-multiline\fR
+flag, then ripgrep will silently fail to match anything instead of reporting an error immediately (like it does with the default regex engine)\&.
 .sp
 Related flags: \-\-no\-pcre2\-unicode
 .sp
@@ -945,7 +954,7 @@ rg \-\- \-foo
 .RS 4
 Replace every match with the text given when printing results\&. Neither this flag nor any other ripgrep flag will modify your files\&.
 .sp
-Capture group indices (e\&.g\&., $5) and names (e\&.g\&., $foo) are supported in the replacement string\&.
+Capture group indices (e\&.g\&., $5) and names (e\&.g\&., $foo) are supported in the replacement string\&. In shells such as Bash and zsh, you should wrap the pattern in single quotes instead of double quotes\&. Otherwise, capture group indices will be replaced by expanded shell variables which will most likely be empty\&.
 .sp
 Note that the replacement by default replaces each match, and NOT the entire line\&. To replace the entire line, you should match the entire line\&.
 .sp
@@ -1359,7 +1368,7 @@ ripgrep may abort unexpectedly when using default settings if it searches a file
 ripgrep may use a large amount of memory depending on a few factors\&. Firstly, if ripgrep uses parallelism for search (the default), then the entire output for each individual file is buffered into memory in order to prevent interleaving matches in the output\&. To avoid this, you can disable parallelism with the \fB\-j1\fR flag\&. Secondly, ripgrep always needs to have at least a single line in memory in order to execute a search\&. A file with a very long line can thus cause ripgrep to use a lot of memory\&. Generally, this only occurs when searching binary data with the \fB\-a\fR flag enabled\&. (When the \fB\-a\fR flag isn\(cqt enabled, ripgrep will replace all NUL bytes with line terminators, which typically prevents exorbitant memory usage\&.) Thirdly, when ripgrep searches a large file using a memory map, the process will report its resident memory usage as the size of the file\&. However, this does not mean ripgrep actually needed to use that much memory; the operating system will generally handle this for you\&.
 .SH "VERSION"
 .sp
-11\&.0\&.1 (rev 973de50c9e) \-SIMD \-AVX (compiled) +SIMD +AVX (runtime)
+11\&.0\&.2 \-SIMD \-AVX (compiled) +SIMD +AVX (runtime)
 .SH "HOMEPAGE"
 .sp
 https://github\&.com/BurntSushi/ripgrep

@@ -92,6 +92,8 @@ Register-ArgumentCompleter -Native -CommandName 'rg' -ScriptBlock {
             [CompletionResult]::new('-L', 'L', [CompletionResultType]::ParameterName, 'Follow symbolic links.')
             [CompletionResult]::new('--follow', 'follow', [CompletionResultType]::ParameterName, 'Follow symbolic links.')
             [CompletionResult]::new('--no-follow', 'no-follow', [CompletionResultType]::ParameterName, 'no-follow')
+            [CompletionResult]::new('--glob-case-insensitive', 'glob-case-insensitive', [CompletionResultType]::ParameterName, 'Process all glob patterns case insensitively.')
+            [CompletionResult]::new('--no-glob-case-insensitive', 'no-glob-case-insensitive', [CompletionResultType]::ParameterName, 'no-glob-case-insensitive')
             [CompletionResult]::new('--heading', 'heading', [CompletionResultType]::ParameterName, 'Print matches grouped by each file.')
             [CompletionResult]::new('--no-heading', 'no-heading', [CompletionResultType]::ParameterName, 'Don''t group matches by each file.')
             [CompletionResult]::new('--hidden', 'hidden', [CompletionResultType]::ParameterName, 'Search hidden files and directories.')

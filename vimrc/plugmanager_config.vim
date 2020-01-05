@@ -26,5 +26,9 @@ Plug 'easymotion/vim-easymotion'
 Plug 'fholgado/minibufexpl.vim'
 Plug 'vim-scripts/c.vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 call plug#end()
 filetype plugin indent on

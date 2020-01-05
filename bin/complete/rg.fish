@@ -51,6 +51,8 @@ complete -c rg -n "__fish_use_subcommand" -s F -l fixed-strings -d 'Treat the pa
 complete -c rg -n "__fish_use_subcommand" -l no-fixed-strings
 complete -c rg -n "__fish_use_subcommand" -s L -l follow -d 'Follow symbolic links.'
 complete -c rg -n "__fish_use_subcommand" -l no-follow
+complete -c rg -n "__fish_use_subcommand" -l glob-case-insensitive -d 'Process all glob patterns case insensitively.'
+complete -c rg -n "__fish_use_subcommand" -l no-glob-case-insensitive
 complete -c rg -n "__fish_use_subcommand" -l heading -d 'Print matches grouped by each file.'
 complete -c rg -n "__fish_use_subcommand" -l no-heading -d 'Don\'t group matches by each file.'
 complete -c rg -n "__fish_use_subcommand" -l hidden -d 'Search hidden files and directories.'

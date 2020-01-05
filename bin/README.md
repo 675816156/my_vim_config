@@ -29,6 +29,7 @@ Please see the [CHANGELOG](CHANGELOG.md) for a release history.
 * [Configuration files](GUIDE.md#configuration-file)
 * [Shell completions](FAQ.md#complete)
 * [Building](#building)
+* [Translations](#translations)
 
 
 ### Screenshot of search results
@@ -92,11 +93,11 @@ increases the times to `2.640s` for ripgrep and `10.277s` for GNU grep.
   [the FAQ](FAQ.md#posix4ever) for more details on whether ripgrep can truly
   replace grep.)
 * Like other tools specialized to code search, ripgrep defaults to recursive
-  directory search and won't search files ignored by your `.gitignore` files.
-  It also ignores hidden and binary files by default. ripgrep also implements
-  full support for `.gitignore`, whereas there are many bugs related to that
-  functionality in other code search tools claiming to provide the same
-  functionality.
+  directory search and won't search files ignored by your
+  `.gitignore`/`.ignore`/`.rgignore` files. It also ignores hidden and binary
+  files by default. ripgrep also implements full support for `.gitignore`,
+  whereas there are many bugs related to that functionality in other code
+  search tools claiming to provide the same functionality.
 * ripgrep can search specific types of files. For example, `rg -tpy foo`
   limits your search to Python files and `rg -Tjs foo` excludes Javascript
   files from your search. ripgrep can be taught about new file types with
@@ -108,13 +109,14 @@ increases the times to `2.640s` for ripgrep and `10.277s` for GNU grep.
 * ripgrep has optional support for switching its regex engine to use PCRE2.
   Among other things, this makes it possible to use look-around and
   backreferences in your patterns, which are not supported in ripgrep's default
-  regex engine. PCRE2 support is enabled with `-P`.
+  regex engine. PCRE2 support can be enabled with `-P/--pcre2` (use PCRE2
+  always) or `--auto-hybrid-regex` (use PCRE2 only if needed).
 * ripgrep supports searching files in text encodings other than UTF-8, such
   as UTF-16, latin-1, GBK, EUC-JP, Shift_JIS and more. (Some support for
   automatically detecting UTF-16 is provided. Other text encodings must be
   specifically specified with the `-E/--encoding` flag.)
-* ripgrep supports searching files compressed in a common format (gzip, xz,
-  lzma, bzip2 or lz4) with the `-z/--search-zip` flag.
+* ripgrep supports searching files compressed in a common format (brotli,
+  bzip2, gzip, lz4, lzma, xz, or zstandard) with the `-z/--search-zip` flag.
 * ripgrep supports arbitrary input preprocessing filters which could be PDF
   text extraction, less supported decompression, decrypting, automatic encoding
   detection and so on.
@@ -223,7 +225,7 @@ $ choco install ripgrep
 ```
 
 If you're a **Windows Scoop** user, then you can install ripgrep from the
-[official bucket](https://github.com/lukesampson/scoop/blob/master/bucket/ripgrep.json):
+[official bucket](https://github.com/ScoopInstaller/Main/blob/master/bucket/ripgrep.json):
 
 ```
 $ scoop install ripgrep
@@ -286,8 +288,8 @@ then ripgrep can be installed using a binary `.deb` file provided in each
 [ripgrep release](https://github.com/BurntSushi/ripgrep/releases).
 
 ```
-$ curl -LO https://github.com/BurntSushi/ripgrep/releases/download/11.0.1/ripgrep_11.0.1_amd64.deb
-$ sudo dpkg -i ripgrep_11.0.1_amd64.deb
+$ curl -LO https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep_11.0.2_amd64.deb
+$ sudo dpkg -i ripgrep_11.0.2_amd64.deb
 ```
 
 If you run Debian Buster (currently Debian testing) or Debian sid, ripgrep is
@@ -341,9 +343,6 @@ If you're a **Rust programmer**, ripgrep can be installed with `cargo`.
 ```
 $ cargo install ripgrep
 ```
-
-ripgrep isn't currently in any other package repositories.
-[I'd like to change that](https://github.com/BurntSushi/ripgrep/issues/10).
 
 
 ### Building
@@ -420,3 +419,11 @@ $ cargo test --all
 ```
 
 from the repository root.
+
+
+### Translations
+
+The following is a list of known translations of ripgrep's documentation. These
+are unofficially maintained and may not be up to date.
+
+* [Chinese](https://github.com/chinanf-boy/ripgrep-zh#%E6%9B%B4%E6%96%B0-)
