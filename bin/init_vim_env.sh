@@ -3,6 +3,7 @@
 #set -o errexit    # exit when command fails
 
 #unset DISPLAY
+export PATH=${HOME}/.vim/bin:$PATH
 export LD_LIBRARY_PATH=${HOME}/.vim/lib:$LD_LIBRARY_PATH
 
 alias zz='z -c'      # restrict matches to subdirs of $PWD
@@ -12,9 +13,20 @@ alias zb='z -b'      # quickly cd to the parent directory
 
 eval "$(lua ${HOME}/.vim/plugged/z.lua/z.lua --init bash enhanced once echo fzf)"
 
+#export http_proxy="socks5://10.0.0.13:1080"
+#export https_proxy="socks5://10.0.0.13:1080"
+
 #sudo -s
 #curl -sL install-node.now.sh/lts | bash
 #exit 0
+#sudo apt install nodejs
+#sudo apt install npm
+
+#git clone https://github.com/rizsotto/Bear.git
+#pushd Bear
+#cmake .
+#make all && sudo make install
+#popd
 
 #cppcheck
 #git clone https://github.com/danmar/cppcheck.git
