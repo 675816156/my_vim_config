@@ -13,17 +13,18 @@ let NERDTreeDirArrows=0
 "
 " NERD git plugin
 "
-let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "*",
-    \ "Staged"    : "+",
-    \ "Untracked" : "^",
-    \ "Renamed"   : ">",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "x",
-    \ "Dirty"     : "X",
-    \ "Clean"     : "V",
-    \ "Unknown"   : "?"
-    \ }
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+        \ 'Modified'  :'✹',
+        \ 'Staged'    :'✚',
+        \ 'Untracked' :'✭',
+        \ 'Renamed'   :'➜',
+        \ 'Unmerged'  :'═',
+        \ 'Deleted'   :'✖',
+        \ 'Dirty'     :'✗',
+        \ 'Ignored'   :'☒',
+        \ 'Clean'     :'✔︎',
+        \ 'Unknown'   :'?',
+        \ }
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 autocmd StdinReadPre * let s:std_in=1
