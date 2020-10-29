@@ -7,9 +7,6 @@ map <F1> :NERDTreeToggle<CR>
 let NERDTreeWinPos="right"
 let NERDTreeIgnore=['\.pyc','\~$','\.swp']
 
-let NERDTreeDirArrows=0
-"let g:NERDTreeDirArrowExpandable = 'O'
-"let g:NERDTreeDirArrowCollapsible = 'o'
 "
 " NERD git plugin
 "
@@ -32,3 +29,13 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 
 " If more than one window and previous buffer was NERDTree, go back to it.
 autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
+
+let g:NERDTreeGitStatusUseNerdFonts = 1 " you should install nerdfonts by yourself. default: 0
+let g:NERDTreeGitStatusShowIgnored = 0 " a heavy feature may cost much more time. default: 0
+let g:NERDTreeGitStatusUntrackedFilesMode = 'normal' " a heave feature too. default: normal
+let g:NERDTreeGitStatusGitBinPath = '/usr/bin/git' " defualt: git (auto find in path)
+let g:NERDTreeGitStatusShowClean = 0 " default: 0
+let g:NERDTreeGitStatusConcealBrackets = 0 " default: 0
+
+let g:NERDTreeDirArrowExpandable = ''
+let g:NERDTreeDirArrowCollapsible = ''

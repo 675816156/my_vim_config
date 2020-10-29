@@ -2,8 +2,9 @@ filetype off
 call plug#begin()
 Plug 'mhinz/vim-startify'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'preservim/nerdtree' |
+    \ Plug 'Xuyuanp/nerdtree-git-plugin' |
+    \ Plug 'ryanoasis/vim-devicons'
 Plug 'godlygeek/tabular'
 Plug 'flazz/vim-colorschemes'
 Plug 'kien/rainbow_parentheses.vim'
