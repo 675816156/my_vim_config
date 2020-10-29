@@ -2,8 +2,8 @@
 case $1 in
 
 on)
-git config --global http.proxy 'socks5://192.168.1.6:1080' 
-git config --global https.proxy 'socks5://192.168.1.6:1080'
+git config --global http.proxy 'socks5://10.0.0.13:1080'
+git config --global https.proxy 'socks5://10.0.0.13:1080'
 ;;
 
 off)
